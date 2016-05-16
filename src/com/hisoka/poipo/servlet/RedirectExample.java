@@ -37,7 +37,8 @@ public class RedirectExample extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
-		response.sendRedirect("http://www.google.com");
+		String keyword = request.getParameter("kata");
+		response.sendRedirect("http://www.google.com/#q="+keyword);
 	}
 
 }
