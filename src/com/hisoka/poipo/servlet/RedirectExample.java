@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class RedirectExample
  */
-@WebServlet("/redirectExample")
+@WebServlet("/RedirectExample")
 public class RedirectExample extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
