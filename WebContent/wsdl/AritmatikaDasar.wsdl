@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://servlet.poipo.hisoka.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://servlet.poipo.hisoka.com" xmlns:intf="http://servlet.poipo.hisoka.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://servlet.poipo.hisoka.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="addTen">
+    <complexType>
+     <sequence>
+      <element name="nilai" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addTenResponse">
+    <complexType>
+     <sequence>
+      <element name="addTenReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subtractTen">
+    <complexType>
+     <sequence>
+      <element name="nilai" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subtractTenResponse">
+    <complexType>
+     <sequence>
+      <element name="subtractTenReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="subtractTenRequest">
+
+      <wsdl:part element="impl:subtractTen" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addTenRequest">
+
+      <wsdl:part element="impl:addTen" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addTenResponse">
+
+      <wsdl:part element="impl:addTenResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subtractTenResponse">
+
+      <wsdl:part element="impl:subtractTenResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AritmatikaDasar">
+
+      <wsdl:operation name="addTen">
+
+         <wsdl:input message="impl:addTenRequest" name="addTenRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addTenResponse" name="addTenResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtractTen">
+
+         <wsdl:input message="impl:subtractTenRequest" name="subtractTenRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subtractTenResponse" name="subtractTenResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AritmatikaDasarSoapBinding" type="impl:AritmatikaDasar">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addTen">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addTenRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addTenResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtractTen">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subtractTenRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subtractTenResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AritmatikaDasarService">
+
+      <wsdl:port binding="impl:AritmatikaDasarSoapBinding" name="AritmatikaDasar">
+
+         <wsdlsoap:address location="http://localhost:8080/Get_Post/services/AritmatikaDasar"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
